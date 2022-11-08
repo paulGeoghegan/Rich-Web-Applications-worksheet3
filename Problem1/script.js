@@ -1,11 +1,13 @@
 let index = 0;
 
 //Adds a new note to the DOM
-document.getElementById("addNote").addEventListener("click", function(){
-	let newNote = document.getElementById("note").value
-	document.getElementById("notes").innerHTML+=`<div id=`+index+`> <p id="text`+index+`"> `+newNote+` </p> <input type="button" value="delete" onclick="removeNote(`+index+`)"/> <input id="editButton`+index+`" type="button" value="edit" onclick="editNote(`+index+`)"/> </div>`
-	index++
-});
+var addNoteButton = document.getElementById("addNote");
+Rx.Observeable.fromEvent(addNoteButton, "click").then(
+	console.log("Clicked")
+	// newNote = document.getElementById("note").value
+	// document.getElementById("notes").innerHTML+=`<div id=`+index+`> <p id="text`+index+`"> `+newNote+` </p> <input type="button" value="delete" onclick="removeNote(`+index+`)"/> <input id="editButton`+index+`" type="button" value="edit" onclick="editNote(`+index+`)"/> </div>`
+	// index++
+);
 
 //This will remove a note using the indexes set up in addNote()
 function removeNote(elementToRemove) {
