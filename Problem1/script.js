@@ -1,3 +1,4 @@
+import {Observable,of, from } from 'rxjs';
 let index = 0;
 
 //Adds a new note to the DOM
