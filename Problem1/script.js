@@ -1,16 +1,13 @@
-const Observeable = rxjs;
-
 
 let index = 0;
 
 //Adds a new note to the DOM
 var addNoteButton = document.getElementById("addNote");
-Observeable.fromEvent(addNoteButton, "click").then(
-	console.log("Clicked")
-	// newNote = document.getElementById("note").value
-	// document.getElementById("notes").innerHTML+=`<div id=`+index+`> <p id="text`+index+`"> `+newNote+` </p> <input type="button" value="delete" onclick="removeNote(`+index+`)"/> <input id="editButton`+index+`" type="button" value="edit" onclick="editNote(`+index+`)"/> </div>`
-	// index++
-);
+rxjs.fromEvent(addNoteButton, "click").subscribe(() => {
+	newNote = document.getElementById("note").value
+	document.getElementById("notes").innerHTML+=`<div id=`+index+`> <p id="text`+index+`"> `+newNote+` </p> <input type="button" value="delete" onclick="removeNote(`+index+`)"/> <input id="editButton`+index+`" type="button" value="edit" onclick="editNote(`+index+`)"/> </div>`
+	index++
+});
 
 //This will remove a note using the indexes set up in addNote()
 function removeNote(elementToRemove) {
@@ -31,7 +28,8 @@ function saveEdit(newElement) {
 }
 
 //This will change the background color of the <p> elements on the page
-document.getElementById("noteColor").addEventListener("change", function(){
+var colorPicker = document.getElementById("noteColor");
+rxjs.fromEvent(colorPicker, "click").subscribe(() => {
 	document.querySelectorAll("p").forEach((p) => {
 	p.style.backgroundColor =event.target.value})
 });
