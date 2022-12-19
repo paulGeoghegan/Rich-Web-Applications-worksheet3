@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Timer </title>
+		<script src="https://unpkg.com/rxjs@7.5.7/dist/bundles/rxjs.umd.min.js"></script>
+	</head>
+	<body>
+	<h1> Timer </h1>
+
+	<div>
+
+		<input id="hours" type="number" name="hours" aria-label="Hours"/>
+		<input id="minutes" type="number" name="minutes" aria-label="Minutes"/>
+		<input id="seconds" type="number" name="seconds" aria-label="Seconds"/>
+		<input id="startTimerBtn" type="button" name="Start" aria-label="Start Timer"/>
+
+	</div>
+
+	<table border="1">
+		<tr><th> Hours </th><th>Minutes</th><th>Seconds</th></tr>
+		<tr><td id="remHours">0</td><td id="remMinutes">0</td><td id="remSeconds">0</td></tr>
+	</table>
+
+	<script src="script.js"></script>
+
+	</body>
+</html>
